@@ -82,7 +82,40 @@ You can also use the "Use Demo Account" button on login page.
 
 ## Setup Instructions
 
-Clone the repo
+## Setup Instructions
+
+Clone the repository
 
 ```bash
-git clone 
+git clone https://github.com/officialmohitagarwal/urbanharvest
+```
+
+Go inside the project folder
+
+```bash
+cd urbanharvest
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
+
+```bash
+npm run dev
+```
+
+For production build
+
+```bash
+npm run build
+```
+
+To preview production build locally
+
+```bash
+npm run preview
+```
