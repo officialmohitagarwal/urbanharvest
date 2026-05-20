@@ -6,7 +6,14 @@ import {
   PanelLeftOpen,
 } from "lucide-react";
 
-import { NavLink, useNavigate } from "react-router-dom";
+import {
+  NavLink,
+  useNavigate,
+} from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+
+import { logout } from "../features/auth/authSlice";
 
 const Sidebar = ({
   collapsed = false,
@@ -15,10 +22,17 @@ const Sidebar = ({
 
   const navigate = useNavigate();
 
+  const dispatch = useDispatch();
+
+  // LOGOUT
   const handleLogout = () => {
+
+    dispatch(logout());
+
     navigate("/");
   };
 
+  // ACTIVE STYLES FOR NAV TABS
   const navItemClass = ({ isActive }) =>
     `flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300
     ${
@@ -54,7 +68,9 @@ const Sidebar = ({
 
           {/* COLLAPSE BUTTON */}
           <button
-            onClick={() => setCollapsed(!collapsed)}
+            onClick={() =>
+              setCollapsed(!collapsed)
+            }
             className="hidden md:flex p-2 rounded-xl hover:bg-white/10 transition"
           >
             {collapsed ? (
@@ -79,7 +95,8 @@ const Sidebar = ({
           >
             <LayoutDashboard size={20} />
 
-            {(!collapsed || window.innerWidth < 768) && (
+            {(!collapsed ||
+              window.innerWidth < 768) && (
               <span>Dashboard</span>
             )}
           </NavLink>
@@ -90,7 +107,8 @@ const Sidebar = ({
           >
             <Package size={20} />
 
-            {(!collapsed || window.innerWidth < 768) && (
+            {(!collapsed ||
+              window.innerWidth < 768) && (
               <span>Products</span>
             )}
           </NavLink>
@@ -108,7 +126,8 @@ const Sidebar = ({
         >
           <LogOut size={20} />
 
-          {(!collapsed || window.innerWidth < 768) && (
+          {(!collapsed ||
+            window.innerWidth < 768) && (
             <span>Logout</span>
           )}
         </button>
