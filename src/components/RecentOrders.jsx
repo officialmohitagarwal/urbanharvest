@@ -4,6 +4,7 @@ const RecentOrders = ({ orders }) => {
   return (
     <div className="mt-10 bg-white/5 border border-white/10 backdrop-blur-2xl rounded-3xl p-6">
 
+      {/* HEADER */}
       <div className="flex items-center justify-between mb-8">
 
         <div>
@@ -24,45 +25,119 @@ const RecentOrders = ({ orders }) => {
 
       </div>
 
+      {/* TABLE HEADER */}
+      <div className="hidden md:grid grid-cols-4 gap-4 px-5 mb-4 text-sm text-slate-400">
+
+        <p>Order ID</p>
+
+        <p>Customer</p>
+
+        <p className="text-center">
+          Amount
+        </p>
+
+        <p className="text-right">
+          Status
+        </p>
+
+      </div>
+
+      {/* ORDERS */}
       <div className="space-y-4">
 
         {orders.map((order, index) => (
           <motion.div
             key={index}
             whileHover={{ scale: 1.01 }}
-            className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white/5 border border-white/5 hover:border-white/10 transition rounded-2xl p-5"
+            transition={{ duration: 0.2 }}
+            className="bg-white/5 border border-white/5 hover:border-white/10 transition rounded-2xl p-5"
           >
 
-            <div>
+            {/* DESKTOP */}
+            <div className="hidden md:grid grid-cols-4 gap-4 items-center">
 
-              <h3 className="font-semibold text-base">
-                {order.id}
-              </h3>
+              {/* ORDER ID */}
+              <div>
 
-              <p className="text-slate-400 text-sm mt-1">
-                {order.customer}
-              </p>
+                <h3 className="font-semibold text-sm">
+                  {order.id}
+                </h3>
+
+              </div>
+
+              {/* CUSTOMER */}
+              <div>
+
+                <p className="text-slate-300 text-sm">
+                  {order.customer}
+                </p>
+
+              </div>
+
+              {/* AMOUNT */}
+              <div className="text-center">
+
+                <p className="font-semibold text-sm">
+                  {order.amount}
+                </p>
+
+              </div>
+
+              {/* STATUS */}
+              <div className="flex justify-end">
+
+                <span
+                  className={`px-4 py-2 rounded-full text-xs font-medium
+                  ${
+                    order.status === "Delivered"
+                      ? "bg-emerald-500/20 text-emerald-400"
+                      : order.status === "Pending"
+                      ? "bg-orange-500/20 text-orange-400"
+                      : "bg-sky-500/20 text-sky-400"
+                  }`}
+                >
+                  {order.status}
+                </span>
+
+              </div>
 
             </div>
 
-            <div className="text-base font-semibold">
-              {order.amount}
-            </div>
+            {/* MOBILE */}
+            <div className="md:hidden space-y-4">
 
-            <div>
+              <div className="flex items-center justify-between">
 
-              <span
-                className={`px-4 py-2 rounded-full text-sm font-medium
-                ${
-                  order.status === "Delivered"
-                    ? "bg-emerald-500/20 text-emerald-400"
-                    : order.status === "Pending"
-                    ? "bg-orange-500/20 text-orange-400"
-                    : "bg-sky-500/20 text-sky-400"
-                }`}
-              >
-                {order.status}
-              </span>
+                <h3 className="font-semibold text-sm">
+                  {order.id}
+                </h3>
+
+                <span
+                  className={`px-3 py-1 rounded-full text-xs font-medium
+                  ${
+                    order.status === "Delivered"
+                      ? "bg-emerald-500/20 text-emerald-400"
+                      : order.status === "Pending"
+                      ? "bg-orange-500/20 text-orange-400"
+                      : "bg-sky-500/20 text-sky-400"
+                  }`}
+                >
+                  {order.status}
+                </span>
+
+              </div>
+
+              <div className="flex items-center justify-between text-sm">
+
+                <p className="text-slate-400">
+                  {order.customer}
+                </p>
+
+                <p className="font-semibold">
+                  {order.amount}
+                </p>
+
+              </div>
 
             </div>
 

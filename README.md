@@ -69,7 +69,7 @@ src/
 - Add/Delete products
 - Product availability tags
 
----
+---YOUR_GITHUB_REPO_LIN
 
 ## Demo Credentials
 
@@ -85,4 +85,4 @@ You can also use the "Use Demo Account" button on login page.
 Clone the repo
 
 ```bash
-git clone YOUR_GITHUB_REPO_LINK
+git clone 

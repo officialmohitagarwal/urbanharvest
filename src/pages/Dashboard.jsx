@@ -3,7 +3,9 @@ import {
   DollarSign,
   Users,
   Truck,
+  ReceiptIndianRupee,
   ArrowUpRight,
+  
 } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -23,7 +25,7 @@ const stats = [
   {
     title: "Revenue",
     value: "$24,000",
-    icon: DollarSign,
+    icon: ReceiptIndianRupee,
     color:
       "from-emerald-500/20 to-emerald-700/20 border-emerald-500/20",
     iconBg: "bg-emerald-500/20",
@@ -48,27 +50,27 @@ const stats = [
 
 const orders = [
   {
-    id: "#1001",
-    customer: "Aarav Sharma",
-    amount: "$120",
+    id: "URBN_HRVST_101",
+    customer: "Mohit Agarwal",
+    amount: "₹120",
     status: "Delivered",
   },
   {
-    id: "#1002",
-    customer: "Priya Verma",
-    amount: "$80",
+    id: "URBN_HRVST_102",
+    customer: "Rohan Goyal",
+    amount: "₹800",
     status: "Pending",
   },
   {
-    id: "#1003",
-    customer: "Rohan Gupta",
-    amount: "$210",
+    id: "URBN_HRVST_103",
+    customer: "Seyjal Gupta",
+    amount: "₹210",
     status: "Delivered",
   },
   {
-    id: "#1004",
-    customer: "Ananya Das",
-    amount: "$65",
+    id: "URBN_HRVST_104",
+    customer: "Ananya Sharma",
+    amount: "₹650",
     status: "Processing",
   },
 ];
