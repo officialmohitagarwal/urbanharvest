@@ -22,7 +22,7 @@ The project is built using React + Vite and focuses more on clean UI/UX, respons
 - Toast notifications
 - Reusable components
 - Smooth hover animations
-- Fully frontend based (mock data)
+- Fully frontend based using mock data
 
 ---
 
@@ -69,18 +69,28 @@ src/
 - Add/Delete products
 - Product availability tags
 
----YOUR_GITHUB_REPO_LIN
+---
+
+## GitHub Repository
+
+https://github.com/officialmohitagarwal/urbanharvest
+
+---
+
+## Live Deployment
+
+https://urbanharvest-self.vercel.app/
+
+---
 
 ## Demo Credentials
 
 Email: admin@urbanharvest.com  
 Password: admin123
 
-You can also use the "Use Demo Account" button on login page.
+You can also use the "Use Demo Account" button on the login page.
 
 ---
-
-## Setup Instructions
 
 ## Setup Instructions
 
@@ -119,3 +129,11 @@ To preview production build locally
 ```bash
 npm run preview
 ```
+
+---
+
+## Notes
+
+This project uses mock/dummy data only as mentioned in the assignment.
+
+Main focus of the project was creating a polished and responsive frontend dashboard with modern UI/UX and reusable React components.
